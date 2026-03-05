@@ -135,7 +135,7 @@ const About = ({ scrollerRef }) => {
         [topics.length],
     );
 
-    const repoUrl = "https://github.com/a2rp/database-deep-dive-core-notes";
+    const repoUrl = "https://github.com/a2rp/databases-deep-dive-core-notes";
 
     const scrollToTopic = (key) => {
         const root = scrollerRef?.current || document;
