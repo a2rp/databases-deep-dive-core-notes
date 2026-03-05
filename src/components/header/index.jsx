@@ -4,7 +4,7 @@ import { Styled } from "./styled";
 import transparentLogo from "/images/transparentLogo.png";
 import { FiMoon, FiSun, FiDatabase, FiLayers } from "react-icons/fi";
 
-const THEME_LS_KEY = "database-deep-dive-core-notes-theme";
+const THEME_LS_KEY = "databases-deep-dive-core-notes-theme";
 
 const Header = () => {
     const [logoLoaded, setLogoLoaded] = useState(false);
@@ -49,7 +49,7 @@ const Header = () => {
                             {!logoLoaded && <div className="logoSkeleton" />}
                             <img
                                 src={transparentLogo}
-                                alt="database-deep-dive-core-notes"
+                                alt="databases-deep-dive-core-notes"
                                 onLoad={() => setLogoLoaded(true)}
                                 style={{ opacity: logoLoaded ? 1 : 0 }}
                                 loading="lazy"

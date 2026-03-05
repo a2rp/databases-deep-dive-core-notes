@@ -2,7 +2,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
 export default defineConfig({
-    base: "/database-deep-dive-core-notes/",
+    base: "/databases-deep-dive-core-notes/",
     plugins: [react()],
 
     define: {
