@@ -24,7 +24,7 @@ import {
 
 const MongoAdvanced = () => {
     // default collapsed
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(true);
 
     const sections = useMemo(() => {
         return [
