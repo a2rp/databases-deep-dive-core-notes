@@ -1658,7 +1658,7 @@ Error generating stack: `+s.message+`
                 transparent
             );
         }
-    `},ng=()=>{const[i,c]=G.useState(!1),d=G.useMemo(()=>[{id:"docModel",icon:a.jsx(qe,{}),title:"Document model and BSON",points:["MongoDB stores data as documents inside collections.","A document is like a JSON object, but MongoDB stores it as BSON (Binary JSON).","BSON adds types that plain JSON does not have, like Date, ObjectId, Decimal128."],exampleTitle:"Example - document in a users collection",example:`// users collection (one document)
+    `},ng=()=>{const[i,c]=G.useState(!0),d=G.useMemo(()=>[{id:"docModel",icon:a.jsx(qe,{}),title:"Document model and BSON",points:["MongoDB stores data as documents inside collections.","A document is like a JSON object, but MongoDB stores it as BSON (Binary JSON).","BSON adds types that plain JSON does not have, like Date, ObjectId, Decimal128."],exampleTitle:"Example - document in a users collection",example:`// users collection (one document)
 {
   "_id": ObjectId("65f1c2c1a9b0c7d6e12a0001"),
   "name": "Ashish",
@@ -2133,7 +2133,7 @@ db.loginEvents.insertOne({ userId, at: new Date(), ip: "1.2.3.4" })`}],[]);retur
             );
             border: 1px solid var(--color-border);
         }
-    `},og=()=>{const[i,c]=G.useState(!1),d=G.useMemo(()=>[{id:"mentalModel",icon:a.jsx(Re,{}),title:"Aggregation mental model",points:["Aggregation is a pipeline - documents flow through stages one by one.","Each stage transforms the stream - filter, reshape, group, sort, join.","Think of it like a factory line - each stage does one job."],exampleTitle:"Pipeline idea",example:`// pipeline skeleton
+    `},og=()=>{const[i,c]=G.useState(!0),d=G.useMemo(()=>[{id:"mentalModel",icon:a.jsx(Re,{}),title:"Aggregation mental model",points:["Aggregation is a pipeline - documents flow through stages one by one.","Each stage transforms the stream - filter, reshape, group, sort, join.","Think of it like a factory line - each stage does one job."],exampleTitle:"Pipeline idea",example:`// pipeline skeleton
 db.collection.aggregate([
   { $match: { /* filter */ } },
   { $project: { /* select or compute fields */ } },
@@ -2616,7 +2616,7 @@ db.orders.find(
                 transparent
             );
         }
-    `},ig=()=>{const[i,c]=G.useState(!1),d=G.useMemo(()=>[{id:"whatIsIndex",icon:a.jsx(To,{}),title:"What is an index (simple mental model)",points:["An index is like a book index - it helps you find pages without scanning the whole book.","Without an index, the database does a full scan - it checks every document or row.","With an index, the database can jump closer to matching data quickly."],exampleTitle:"Example - full scan vs index scan idea",example:`// Query
+    `},ig=()=>{const[i,c]=G.useState(!0),d=G.useMemo(()=>[{id:"whatIsIndex",icon:a.jsx(To,{}),title:"What is an index (simple mental model)",points:["An index is like a book index - it helps you find pages without scanning the whole book.","Without an index, the database does a full scan - it checks every document or row.","With an index, the database can jump closer to matching data quickly."],exampleTitle:"Example - full scan vs index scan idea",example:`// Query
 db.users.find({ email: "ashish@example.com" })
 
 // Without index
@@ -3076,7 +3076,7 @@ db.orders.createIndex({ status: 1, createdAt: -1 })`}],[]);return G.useEffect(()
                 transparent
             );
         }
-    `},ag=()=>{const[i,c]=G.useState(!1),d=G.useMemo(()=>[{id:"goal",icon:a.jsx(Re,{}),title:"Schema design goal - shape the data for your reads",points:["Schema design is about choosing the best data shape for your most common queries.","In MongoDB, you can embed or reference. In SQL, you normalize and join.","Good schema is not about being perfect - it is about being practical."],exampleTitle:"Rule of thumb",example:`- If you read things together - store them together
+    `},ag=()=>{const[i,c]=G.useState(!0),d=G.useMemo(()=>[{id:"goal",icon:a.jsx(Re,{}),title:"Schema design goal - shape the data for your reads",points:["Schema design is about choosing the best data shape for your most common queries.","In MongoDB, you can embed or reference. In SQL, you normalize and join.","Good schema is not about being perfect - it is about being practical."],exampleTitle:"Rule of thumb",example:`- If you read things together - store them together
 - If things grow forever - store separately
 - If things are shared by many records - reference them`,notes:["Start from queries - not from tables or collections.","List your top 5 API endpoints and design for them first."]},{id:"embedVsRef",icon:a.jsx(In,{}),title:"Embedding vs referencing (MongoDB core decision)",points:["Embedding means nested data inside one document.","Referencing means storing an id and fetching the related data separately.","Embedding is faster for read together data, referencing is safer for shared and frequently changing data."],exampleTitle:"Embedding example - order with items",example:`// orders
 {
@@ -3578,7 +3578,7 @@ db.clickEvents.createIndex({ at: -1 })`,notes:["Write heavy collections should h
                 transparent
             );
         }
-    `},sg=()=>{const[i,c]=G.useState(!1),d=G.useMemo(()=>[{id:"whatIsSql",icon:a.jsx(qe,{}),title:"What is SQL and why it exists",points:["SQL means Structured Query Language.","SQL is used to store and query data in relational databases (RDBMS).","Relational databases store data in tables with rows and columns.","SQL is declarative - you tell what you want, the database decides how to get it."],exampleTitle:"Example - read data",example:`SELECT * FROM users;
+    `},sg=()=>{const[i,c]=G.useState(!0),d=G.useMemo(()=>[{id:"whatIsSql",icon:a.jsx(qe,{}),title:"What is SQL and why it exists",points:["SQL means Structured Query Language.","SQL is used to store and query data in relational databases (RDBMS).","Relational databases store data in tables with rows and columns.","SQL is declarative - you tell what you want, the database decides how to get it."],exampleTitle:"Example - read data",example:`SELECT * FROM users;
 SELECT name, email FROM users WHERE is_active = TRUE;`,notes:["RDBMS common examples - PostgreSQL, MySQL, SQL Server, Oracle.","SQL is great when you need relationships, constraints, and strong consistency."]},{id:"coreTerms",icon:a.jsx(vp,{}),title:"Core terms you must know",points:["Table - a set of rows (like a spreadsheet) for one entity, like users or orders.","Row - one record inside a table.","Column - one field inside a row, like name or created_at.","Schema - structure definition of tables, columns, and constraints."],exampleTitle:"Example - users table",example:`CREATE TABLE users (
   id BIGSERIAL PRIMARY KEY,
   name TEXT NOT NULL,
@@ -4033,7 +4033,7 @@ LIMIT 20;`,notes:["EXPLAIN ANALYZE actually runs the query and gives real timing
                 transparent
             );
         }
-    `},lg=()=>{const[i,c]=G.useState(!1),d=G.useMemo(()=>[{id:"whatIsJoin",icon:a.jsx(In,{}),title:"What is a join (simple mental model)",points:["A join combines rows from two (or more) tables using a related column.","Most common join key is a foreign key - like orders.user_id referencing users.id.","Joins let you fetch related data in one query instead of multiple queries."],exampleTitle:"Example - tables",example:`-- users
+    `},lg=()=>{const[i,c]=G.useState(!0),d=G.useMemo(()=>[{id:"whatIsJoin",icon:a.jsx(In,{}),title:"What is a join (simple mental model)",points:["A join combines rows from two (or more) tables using a related column.","Most common join key is a foreign key - like orders.user_id referencing users.id.","Joins let you fetch related data in one query instead of multiple queries."],exampleTitle:"Example - tables",example:`-- users
 -- id | name  | email
 -- 1  | Ashish| ashish@example.com
 -- 2  | Neha  | neha@example.com
@@ -4491,7 +4491,7 @@ CREATE INDEX idx_orders_user_id ON orders(user_id);`,notes:["For frequent query 
                 transparent
             );
         }
-    `},cg=()=>{const[i,c]=G.useState(!1),d=G.useMemo(()=>[{id:"whatIsSubquery",icon:a.jsx(Re,{}),title:"What is a subquery (simple mental model)",points:["A subquery is a query inside another query.","The inner query produces a value or a set of rows used by the outer query.","Subqueries help when you need intermediate results without creating temporary tables."],exampleTitle:"Basic shape",example:`SELECT *
+    `},cg=()=>{const[i,c]=G.useState(!0),d=G.useMemo(()=>[{id:"whatIsSubquery",icon:a.jsx(Re,{}),title:"What is a subquery (simple mental model)",points:["A subquery is a query inside another query.","The inner query produces a value or a set of rows used by the outer query.","Subqueries help when you need intermediate results without creating temporary tables."],exampleTitle:"Basic shape",example:`SELECT *
 FROM orders
 WHERE user_id IN (
   SELECT id FROM users WHERE is_active = TRUE
@@ -4960,7 +4960,7 @@ CREATE INDEX idx_orders_user_created ON orders(user_id, created_at DESC);`,notes
                 transparent
             );
         }
-    `},dg=()=>{const[i,c]=G.useState(!1),d=G.useMemo(()=>[{id:"whatIsTxn",icon:a.jsx(No,{}),title:"What is a transaction (simple mental model)",points:["A transaction is a group of database operations treated as one unit.","Either everything succeeds (commit) or everything is undone (rollback).","Transactions protect your data from partial updates and concurrency bugs."],exampleTitle:"Classic example - money transfer",example:`BEGIN;
+    `},dg=()=>{const[i,c]=G.useState(!0),d=G.useMemo(()=>[{id:"whatIsTxn",icon:a.jsx(No,{}),title:"What is a transaction (simple mental model)",points:["A transaction is a group of database operations treated as one unit.","Either everything succeeds (commit) or everything is undone (rollback).","Transactions protect your data from partial updates and concurrency bugs."],exampleTitle:"Classic example - money transfer",example:`BEGIN;
 
 UPDATE accounts SET balance = balance - 500 WHERE id = 1;
 UPDATE accounts SET balance = balance + 500 WHERE id = 2;
@@ -5424,7 +5424,7 @@ db.accounts.updateOne(
                 transparent
             );
         }
-    `},ug=()=>{const[i,c]=G.useState(!1),d=G.useMemo(()=>[{id:"whyScale",icon:a.jsx(Yi,{}),title:"Why databases need scaling",points:["Traffic grows - more reads and writes per second.","Data grows - tables and indexes become larger.","Queries grow - more joins, more aggregation, more analytics.","Scaling means keeping latency low and throughput high as load increases."],exampleTitle:"Real symptoms of scaling pain",example:`- API response times increasing
+    `},ug=()=>{const[i,c]=G.useState(!0),d=G.useMemo(()=>[{id:"whyScale",icon:a.jsx(Yi,{}),title:"Why databases need scaling",points:["Traffic grows - more reads and writes per second.","Data grows - tables and indexes become larger.","Queries grow - more joins, more aggregation, more analytics.","Scaling means keeping latency low and throughput high as load increases."],exampleTitle:"Real symptoms of scaling pain",example:`- API response times increasing
 - CPU at 90% all day
 - Disk I/O constantly maxed
 - Slow queries dominate logs
@@ -5860,7 +5860,7 @@ events_2026_03
                 transparent
             );
         }
-    `},pg=()=>{const[i,c]=G.useState(!1),d=G.useMemo(()=>[{id:"whatIsReplication",icon:a.jsx(Ui,{}),title:"What is replication (simple mental model)",points:["Replication means keeping copies of your database data on multiple machines.","Main goals - high availability (HA), disaster recovery, and scaling reads.","Usually there is one primary (leader) for writes and one or more replicas (followers) for copying."],exampleTitle:"Mental picture",example:`- PRIMARY (writes)
+    `},pg=()=>{const[i,c]=G.useState(!0),d=G.useMemo(()=>[{id:"whatIsReplication",icon:a.jsx(Ui,{}),title:"What is replication (simple mental model)",points:["Replication means keeping copies of your database data on multiple machines.","Main goals - high availability (HA), disaster recovery, and scaling reads.","Usually there is one primary (leader) for writes and one or more replicas (followers) for copying."],exampleTitle:"Mental picture",example:`- PRIMARY (writes)
 - REPLICA 1 (copy for reads)
 - REPLICA 2 (copy for reads and failover)`,notes:["Replication is not the same as backups. Backups are point-in-time snapshots. Replication is continuous copying."]},{id:"leaderFollower",icon:a.jsx(yp,{}),title:"Primary-secondary (leader-follower) replication",points:["Primary handles writes and produces a stream of changes (log).","Replicas read that change stream and apply it to stay updated.","Replicas usually serve read queries to offload the primary."],exampleTitle:"SQL replication idea",example:`- Primary writes to WAL (write-ahead log)
 - Replicas replay WAL to stay in sync`,notes:["Different databases use different names - WAL, binlog, oplog."]},{id:"syncAsync",icon:a.jsx(Qm,{}),title:"Synchronous vs asynchronous replication",points:["Asynchronous - primary commits first, replicas catch up later. Fast writes but can lose last few seconds if primary dies.","Synchronous - primary waits for replica ack before commit. Safer but slower writes.","Many systems use async for performance and accept small risk."],exampleTitle:"Tradeoff",example:`- Async - faster, small window of potential data loss (RPO > 0)
@@ -6287,7 +6287,7 @@ db.orders.find({ userId: ObjectId("...") }).readPref("secondaryPreferred")`,note
                 transparent
             );
         }
-    `},fg=()=>{const[i,c]=G.useState(!1),d=G.useMemo(()=>[{id:"whatIsSharding",icon:a.jsx(So,{}),title:"What is sharding (simple mental model)",points:["Sharding is splitting data across multiple database nodes so one machine does not store everything.","Each shard holds only a portion of the data, but together they represent the full dataset.","Main goal - scale storage and write throughput beyond a single machine."],exampleTitle:"Mental picture",example:`- Shard 1 stores users 1 to 1,000,000
+    `},fg=()=>{const[i,c]=G.useState(!0),d=G.useMemo(()=>[{id:"whatIsSharding",icon:a.jsx(So,{}),title:"What is sharding (simple mental model)",points:["Sharding is splitting data across multiple database nodes so one machine does not store everything.","Each shard holds only a portion of the data, but together they represent the full dataset.","Main goal - scale storage and write throughput beyond a single machine."],exampleTitle:"Mental picture",example:`- Shard 1 stores users 1 to 1,000,000
 - Shard 2 stores users 1,000,001 to 2,000,000
 - Shard 3 stores users 2,000,001 to 3,000,000`,notes:["Replication makes copies of data. Sharding splits data. They solve different problems."]},{id:"whyShard",icon:a.jsx(Yi,{}),title:"When you actually need sharding",points:["Your dataset is too large for a single node even with good hardware.","Writes are too heavy for a single primary and you already fixed queries and indexes.","You have clear partition key patterns (tenant_id, user_id, region).","You can accept more operational complexity."],exampleTitle:"Signs you are not ready yet",example:`- You still have slow queries without proper indexes
 - You have not tried partitioning or caching
