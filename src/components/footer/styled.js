@@ -1,4 +1,3 @@
-// components/footer/styled.js
 import styled from "styled-components";
 
 export const Styled = {
@@ -6,35 +5,61 @@ export const Styled = {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 12px;
-        padding: 15px;
+        gap: 16px;
+        padding: 18px 15px 24px;
         border-top: 1px solid var(--color-border);
-
-        font-size: 12px;
         color: var(--color-text-muted);
+        font-size: 12px;
 
-        .right a {
-            color: var(--color-text-secondary);
-            font-weight: 600;
+        .copy {
+            line-height: 1.6;
         }
 
-        .right a:hover {
+        .copy a {
+            color: var(--color-text-secondary);
+            font-weight: 700;
+        }
+
+        .copy a:hover {
             color: var(--color-text-primary);
         }
 
-        a {
-            color: var(--color-text-secondary);
-            font-weight: 600;
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            gap: 7px;
         }
 
-        a:hover {
+        .links a {
+            display: inline-grid;
+            place-items: center;
+            width: 30px;
+            height: 30px;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            color: var(--color-text-secondary);
+            transition: color 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+        }
+
+        .links a:hover {
             color: var(--color-text-primary);
+            border-color: var(--color-accent);
+            box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 18%, transparent);
+        }
+
+        .links svg {
+            width: 15px;
+            height: 15px;
         }
 
         @media (width < 600px) {
             flex-direction: column;
             align-items: flex-start;
-            gap: 6px;
+
+            .links {
+                justify-content: flex-start;
+            }
         }
     `,
 };

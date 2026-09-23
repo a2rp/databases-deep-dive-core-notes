@@ -1,10 +1,10 @@
 // src/components/header/index.jsx
 import React, { useEffect, useMemo, useState } from "react";
 import { Styled } from "./styled";
-import transparentLogo from "/images/transparentLogo.png";
 import { FiMoon, FiSun, FiDatabase, FiLayers } from "react-icons/fi";
 
 const THEME_LS_KEY = "databases-deep-dive-core-notes-theme";
+const logo = `${import.meta.env.BASE_URL}logo.png`;
 
 const Header = () => {
     const [logoLoaded, setLogoLoaded] = useState(false);
@@ -48,8 +48,8 @@ const Header = () => {
                         <div className="logoWrapper">
                             {!logoLoaded && <div className="logoSkeleton" />}
                             <img
-                                src={transparentLogo}
-                                alt="databases-deep-dive-core-notes"
+                                src={logo}
+                                alt="Databases Deep Dive Core Notes logo"
                                 onLoad={() => setLogoLoaded(true)}
                                 style={{ opacity: logoLoaded ? 1 : 0 }}
                                 loading="lazy"

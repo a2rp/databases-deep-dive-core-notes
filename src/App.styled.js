@@ -10,7 +10,7 @@ export const Styled = {
     `,
 
     Header: styled.header`
-        height: 60px;
+        height: 64px;
         flex-shrink: 0;
     `,
 
@@ -21,7 +21,7 @@ export const Styled = {
 
         .studyNav {
             position: fixed;
-            top: 60px;
+            top: 64px;
             bottom: 0;
             left: 0;
             width: 248px;
