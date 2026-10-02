@@ -2,7 +2,7 @@
 
 A single-page revision guide for practical database engineering concepts, including SQL, MongoDB, indexing, transactions, replication, scaling, and sharding.
 
-![Databases Deep Dive Core Notes screenshot](screenshot.png)
+![Databases Deep Dive Core Notes screenshot](./screenshot.jpg)
 
 ## Features
 
